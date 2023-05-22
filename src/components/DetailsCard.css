@@ -1,0 +1,15 @@
+.cards_container {
+  background-color: rgb(199, 194, 194);
+  height: 720px;
+  width: 85%;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.card_div {
+  width: 30%;
+  height: 80%;
+  background-color: green;
+  margin: auto;
+  border-radius: 10px;
+}

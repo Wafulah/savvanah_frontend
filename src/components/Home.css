@@ -1,0 +1,47 @@
+
+.form_div {
+  background-color: rgb(199, 194, 194);
+  width: 40%;
+  margin: 6% auto;
+  height: 300px;
+  border-radius: 10px;
+}
+
+.el_form_input {
+  color: red;
+  background-color: green;
+  width: 50%;
+  height: 50px;
+  border-radius: 10px;
+  justify-content: center;
+  padding: 2%;
+  /* background-color: white; */
+}
+
+.el_form_label {
+  color: rgb(2, 2, 43);
+  /* background-color: white; */
+}
+.el_btn {
+  background-color: green;
+  color: blue;
+  margin: 5% auto;
+  width: 10%;
+  box-shadow: 5 2 4 black;
+}
+.lucid_font {
+  font-family: "Lucida Bright", sans-serif;
+}
+.brush_font {
+  font-family: "Brush Script", cursive;
+}
+.mon_font {
+  font-family: "Monaco", monospace;
+}
+.opt_font {
+  font-family: "Optima", sans-serif;
+}
+
+.extra {
+  height: 30px;
+}

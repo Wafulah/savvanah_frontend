@@ -1,0 +1,50 @@
+{
+  "eligibilityTime": "2023-03-15T10:24:37.138676Z",
+  "member": {
+    "id": 636561,
+    "beneficiaryCode": "DEMO/001",
+    "title": "Mr",
+    "names": "John Kerry",
+    "gender": "M",
+    "dateOfBirth": "1989-12-31T21:00:00Z",
+    "isVip": false,
+    "isPrincipal": true,
+    "principalMember": null,
+    "principalRelationship": null,
+    "contacts": [
+      {
+        "id": 1,
+        "contactValue": "+254790830838"
+      }
+    ],
+    "group": "Muungano Scheme",
+    "category": "CAT A",
+    "categoryCode": "CAT A",
+    "isActive": true,
+    "isEnrolled": true
+  },
+  "cover": {
+    "policyNumber": "POL/001",
+    "schemeCode": "POL/001",
+    "schemeName": "Muungano Scheme",
+    "status": "LIVE",
+    "validFrom": "2023-01-01T00:00:00+03:00",
+    "validTo": "2050-01-01T00:00:00+03:00"
+  },
+  "benefits": [
+    {
+      "benefitCode": 340,
+      "availableBalance": 500000,
+      "benefitLimit": 500000,
+      "benefitName": "Inpatient shared",
+      "benefitType": "INPATIENT",
+      "copayValue": 500,
+      "copayType": "FLAT",
+      "copayAppliesTo": ["CONSULTATION"],
+      "status": "AVAILABLE",
+      "errors": [],
+      "visitLimit": 15000,
+      "reservedAmount": 0
+    }
+  ]
+}
