@@ -15,7 +15,7 @@ html {
   @apply xl:text-[4rem] text-[4rem] xl:leading-[1rem] leading-[3rem] font-medium text-white;
 }
 .smaller-head-text {
-  @apply xl:text-[2rem] text-[2rem] xl:leading-[1rem] leading-[2rem] font-medium text-white;
+  @apply xl:text-[2rem] text-[2rem] xl:leading-[1rem] leading-[2rem] font-medium ;
 }
 .glassmorphism {
   background: rgba(255, 255, 255, 0.25);

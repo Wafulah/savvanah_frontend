@@ -1,20 +1,72 @@
+.header_div {
+  position: relative;
+  /* background-color: red; */
+  margin: auto;
+  height: 430px;
+}
+.header_child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.header_glassmorphism {
+  background: rgba(3, 28, 95, 0.342);
+  box-shadow: 0 2px 30px 0 rgba(31, 38, 135, 0.07);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.text_light_green {
+  color: rgb(3, 228, 134);
+  background-color: rgb(3, 228, 134);
+}
+.curved_div {
+  border-radius: 60% / 40% 5% 0 0;
+}
+.info_curve_div {
+  background-color: rgb(236, 255, 251);
+  height: 1200px;
+  border: none;
+}
+.info_div {
+  background-color: white;
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: 2px 2px 20px rgba(17, 128, 179, 0.26);
+}
+
+.curve_extra {
+  height: 20%;
+  /* background-color: brown; */
+}
 
 .form_div {
-  background-color: rgb(199, 194, 194);
+  background-color: rgb(236, 255, 251);
   width: 40%;
   margin: 6% auto;
   height: 300px;
   border-radius: 10px;
+  /* background-color: red; */
 }
 
 .el_form_input {
   color: red;
-  background-color: green;
-  width: 50%;
+  background-color: transparent;
+  
   height: 50px;
-  border-radius: 10px;
+  
   justify-content: center;
   padding: 2%;
+  border: none;
+  border-bottom: 3px solid rgb(3, 228, 134); /* Change the color as desired */
+  background-color: transparent;
   /* background-color: white; */
 }
 

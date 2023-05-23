@@ -4,6 +4,11 @@ import Datta from "./data.json";
 import DetailsCard from "./DetailsCard";
 import OTPPage from "./OTPPage";
 
+import HomeImage from "../assets/home.png";
+import DocImage from "../assets/doctors.svg";
+import VsImage from "../assets/vision.svg";
+import InsImage from "../assets/app.svg";
+
 const Home = () => {
   const [formData, setFormData] = useState({
     membershipNumber: "",
@@ -13,7 +18,6 @@ const Home = () => {
   const [Data, setDatta] = useState(null);
   const [response, setResponse] = useState(null);
   //   const Data = null;
-  
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -32,18 +36,14 @@ const Home = () => {
           },
           body: JSON.stringify(formData),
         }
-        
-        
       );
 
       const data = await response.json();
       setResponse(data);
       setDatta(Datta);
-      
     } catch (error) {
       console.error(error);
     }
-
 
     // Reset the form after submission
     setFormData({
@@ -53,20 +53,110 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <div className="mx-auto w-3/4 mt-20">
+    <div className="w-screen">
+      {/* <div className="mx-auto w-3/4 mt-20">
         <p className="small-head-text text-center">G3 Patient Authentication</p>
+      </div> */}
+
+      {/* start of header */}
+      <diV>
+        <div className="header_div w-11/12">
+          <img src={HomeImage} alt="G3" className="w-full" />
+          <div className="header_glassmorphism  header_child">
+            <div className="mx-auto w-3/4 mt-5">
+              <p className="bg-inherit text_light_green smaller-head-text text-center">
+                G3 Patient Authentication
+              </p>
+            </div>
+            <div className="flex justify-center">
+              <div className="text-center">
+                <p className="py-4 px-3">
+                  G3 Patient Authentication is an online platform that enables
+                  hospitals to verify the insurance status of their patients.
+                  Using their member number, payer slider number, and phone
+                  number, hospitals can seamlessly authenticate patients and
+                  ensure smooth insurance processing.
+                </p>
+              </div>
+            </div>
+            {/* button */}
+            <div className="flex justify-center">
+              <button className="w-3/4  text_light_green hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">
+                Get Started
+              </button>
+            </div>
+            {/* end of button */}
+          </div>
+        </div>
+      </diV>
+      {/* end of header */}
+      <div className="mt-10 curved_div info_curve_div">
+        <div className="curve_extra"></div>
+        <div className="info_div h-1/4 w-3/4  mb-5">
+          <div className="h-2/4 w-3/4 mx-auto ">
+            <img
+              src={InsImage}
+              alt="doctors"
+              className="w-full h-full bg-cover bg-center"
+            />
+          </div>
+          <div>
+            <p className="bg-inherit text_light_green pt-2.5 px-10 ">
+              Patients
+            </p>
+            <p className="opacity-50 bg-inherit text-gray-500 font-bold pt-1 px-10 ">
+              Keep track of your insurance cover on real time from any device.
+            </p>
+          </div>
+        </div>
+        <div className="info_div h-1/4 w-3/4  mb-5">
+          <div className="h-2/4 w-3/4 mx-auto ">
+            <img
+              src={DocImage}
+              alt="doctors"
+              className="pt-3 w-full h-full bg-cover bg-center"
+            />
+          </div>
+          <div>
+            <p className="bg-inherit text_light_green pt-2.5 px-10 ">
+              Medical Practitioners
+            </p>
+            <p className="opacity-50 bg-inherit text-gray-500 font-bold pt-1 px-10 ">
+              {" "}
+              Authenticate and verify Patients insurance details easy and fast
+            </p>
+          </div>
+        </div>
+        <div className="info_div h-1/4 w-3/4  mb-5">
+          <div className="h-2/4  w-3/4 mx-auto">
+            <img
+              src={VsImage}
+              alt="doctors"
+              className="pt-3 w-full h-full bg-cover bg-center"
+            />
+          </div>
+          <div>
+            <p className="bg-inherit text_light_green pt-2.5 px-10 ">
+              Insurance Providers
+            </p>
+            <p className="opacity-50 bg-inherit text-gray-500 font-bold pt-1 px-10 ">
+              {" "}
+              Easly verify insurance claims and identify and avoid fraud with ease.
+            </p>
+          </div>
+        </div>
       </div>
+
       <div>
         <div>
-          <div className="justify-center form_div">
+          <div className="w-3/4 justify-center form_div">
             <form
               className="w-3/4 mx-auto justify-between"
               onSubmit={handleSubmit}
             >
               <br />
-              <label className="flex">
-                <p className="lucid-font text-bold opacity-75 el_form_label px-2.5">
+              <label>
+                <p className="lucid-font text-bold opacity-75 el_form_label pt-2 px-2.5">
                   Member Number:{" "}
                 </p>
                 <input
@@ -75,12 +165,12 @@ const Home = () => {
                   name="membershipNumber"
                   value={formData.membership}
                   onChange={handleChange}
-                  className="text-white text-bold el_form_input"
+                  className="focus:outline-none ml-2 w-full text-black font-semibold opacity-75  el_form_input"
                 />
               </label>
               <br />
-              <label className="flex">
-                <p className="lucid-font text-bold opacity-75 el_form_label px-2.5">
+              <label>
+                <p className="lucid-font text-bold opacity-75 el_form_label pt-2 px-2">
                   Insurer Number:
                 </p>
                 <input
@@ -89,33 +179,27 @@ const Home = () => {
                   placeholder="Insurer Number"
                   value={formData.insurerNumber}
                   onChange={handleChange}
-                  className="text-gray-300 text-bold el_form_input"
+                  className="focus:outline-none ml-2 w-full text-black font-semibold opacity-75  el_form_input"
                 />
               </label>
               <br />
+              <div className="flex justify-center">
               <button
-                style={{
-                  backgroundColor: "green",
-                  width: "40%",
-                  height: "40px",
-                  margin: "auto auto auto 20%",
-                  borderRadius: "10px",
-
-                }}
-                className="el_btn"
+                className="text_light_green w-11/12 mt-5 mx-auto border rounded-full bg-green-500 h-10"
                 type="submit"
               >
-                <p className="text-gray-300 font-bold">Submit</p>
+                <p className="text-white font-bold">Submit</p>
               </button>
+              </div>
             </form>
           </div>
         </div>
       </div>
-      <div className="extra"></div>
+      {/* <div className="extra"></div>
       {Data ? <DetailsCard data={Data} /> : <></>}
       <div className="extra"></div>
       <OTPPage otp={otp} />
-      <div className="extra"></div>
+      <div className="extra"></div> */}
     </div>
   );
 };
