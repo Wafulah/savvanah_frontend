@@ -104,17 +104,17 @@ const DetailsCard = ({ data, setDatta }) => {
           >
             <div className="ml-5 w-1/3">
               <p className="text_light_green bg-transparent font-black text-lg  py-2.5">
-                Name
+                Name:
               </p>
               <p className="text_light_green bg-transparent font-black text-lg  py-2.5">
-                Type
+                Type:
               </p>
 
               <p className="text_light_green bg-transparent font-black text-lg  py-2.5">
-                Applies
+                Applies:
               </p>
               <p className="text_light_green bg-transparent font-black text-lg  py-2.5">
-                Status
+                Status:
               </p>
             </div>
             <div className=" w-3/4">

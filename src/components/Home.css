@@ -32,7 +32,7 @@
 }
 .info_curve_div {
   background-color: rgb(236, 255, 251);
-  height: 1200px;
+  height: 1700px;
   border: none;
 }
 .info_div {
@@ -59,9 +59,9 @@
 .el_form_input {
   color: red;
   background-color: transparent;
-  
+
   height: 50px;
-  
+
   justify-content: center;
   padding: 2%;
   border: none;
@@ -108,14 +108,16 @@
     width: 100%;
     margin: auto;
     border-radius: 10px;
-    
   }
   .info_curve_div {
     background-color: rgb(236, 255, 251);
-    height: 1500px;
+    height: 1520px;
     border: none;
   }
 }
 
-
-
+@media (max-width: 800px) {
+  .hide {
+    visibility: hidden;
+  }
+}

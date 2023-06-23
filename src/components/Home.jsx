@@ -62,45 +62,47 @@ const Home = () => {
       {/* start of header */}
       <div>
         <div className=" sm:w-3/4 header_div w-11/12">
-          
           <div className="xl:flex xl:justify-center header_glassmorphism  header_child">
-          <div className="xl:w-2/5 xl:h-full xl:flex-shrink-1">
-            <img  src={HomeImage} alt="G3" className="h-full bg-cover w-full" />
-          </div>
-          <div className=" xl:w-2/4 xl:mx-0 mx-auto w-3/4 mt-5 block">
-            <div >
-              <p className="bg-inherit text_light_green smaller-head-text text-center">
-                G3 Patient Authentication
-              </p>
+            <div className="hide w-0 h-0 xl:w-2/5 xl:h-full xl:flex-shrink-1">
+              <img
+                src={HomeImage}
+                alt="G3"
+                className="h-full bg-cover w-full"
+              />
             </div>
-           
-            <div className="xl:mt-10 flex justify-center">
-              <div className="xl:w-3/4 text-center">
-                <p className="xl:text-base sm:text-xl text-lg py-4 px-3">
-                  G3 Patient Authentication is an online platform that enables
-                  hospitals to verify the insurance status of their patients.
-                  Using their member number, payer slider number, and phone
-                  number, hospitals can seamlessly authenticate patients and
-                  ensure smooth insurance processing.
+            <div className=" xl:w-2/4 xl:mx-0 mx-auto w-3/4 mt-5 block">
+              <div>
+                <p className="bg-inherit text_light_green smaller-head-text text-center">
+                  G3 Patient Authentication
                 </p>
               </div>
+
+              <div className="xl:mt-10 flex justify-center">
+                <div className="xl:w-3/4 text-center">
+                  <p className="xl:text-base sm:text-xl text-base py-4 px-1">
+                    G3 Patient Authentication is an online platform that enables
+                    hospitals to verify the insurance status of their patients.
+                    Using their member number, payer slider number, and phone
+                    number, hospitals can seamlessly authenticate patients and
+                    ensure smooth insurance processing.
+                  </p>
+                </div>
+              </div>
+              {/* button */}
+              <div className="xl:mt-16 flex justify-center">
+                <button className="w-3/4  text_light_green hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">
+                  Get Started
+                </button>
+              </div>
+              {/* end of button */}
             </div>
-            {/* button */}
-            <div className="xl:mt-16 flex justify-center">
-              <button className="w-3/4  text_light_green hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">
-                Get Started
-              </button>
-            </div>
-            {/* end of button */}
           </div>
-          
         </div>
-      </div>
       </div>
       {/* end of header */}
       <div className="mt-10 curved_div info_curve_div">
         <div className="curve_extra"></div>
-        <div className="xl:w-2/3 sm:w-3/5 info_div h-1/4 w-3/4  mb-5">
+        <div className=" xl:w-2/3 sm:w-3/5 info_div h-1/5 w-3/4  mb-5">
           <div className="h-2/4 w-3/4 mx-auto ">
             <img
               src={InsImage}
@@ -116,8 +118,9 @@ const Home = () => {
               Keep track of your insurance cover on real time from any device.
             </p>
           </div>
-        </div>``
-        <div className="xl:w-2/3 sm:w-3/5 info_div h-1/4 w-3/4  mb-5">
+        </div>
+        ``
+        <div className="xl:w-2/3 sm:w-3/5 info_div h-1/5 w-3/4  mb-5">
           <div className="h-2/4 w-3/4 mx-auto ">
             <img
               src={DocImage}
@@ -135,7 +138,7 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <div className="xl:w-2/3 sm:w-3/5 info_div h-1/4 w-3/4  mb-5">
+        <div className="xl:w-2/3 sm:w-3/5 info_div h-1/5 w-3/4  mb-5">
           <div className="h-2/4  w-3/4 mx-auto">
             <img
               src={VsImage}
