@@ -1,63 +1,57 @@
 import React from "react";
 import "./DetailsCard.css";
+import { FaTimes } from 'react-icons/fa';
 
-const DetailsCard = ({ data }) => {
+const DetailsCard = ({ data, setDatta }) => {
+  const handleClearData = () => {
+    setDatta(null);
+  };
   return (
-    <div>
-      <div className="mx-auto w-1/3 small-head-text"> Patient Details</div>
-      <div className="flex mt-20 cards_container">
+    <div className="home_detail ">
+    <button className="close-button" onClick={handleClearData}>
+        <FaTimes className=" text-3xl"/>
+      </button>
+      <div className="mx-auto w-3/4 mt-5">
+        <p className="bg-inherit text_light_green smaller-head-text text-center">
+          Patient Details
+        </p>
+      </div>
+      <div className="block mt-5 cards_container">
         {/* member div */}
         <div className="card_div">
-          <h2 className="font-bold opacity-75 text-2xl text-center py-5">
+          <h2 className="font-black opacity-75 text-2xl text-center py-5">
             Personal Information
           </h2>
-          <div
-            style={{ width: "95%" }}
-            className="flex mx-auto justify-between"
-          >
-            <div className="w-1/3">
-              <p className="font-bold py-2.5 ">Names</p>
-              <p className="font-bold py-2.5">ID</p>
-              <p className="font-bold py-2.5">Gender</p>
-              <p className="font-bold py-2.5">Principal</p>
-              <p className="font-bold py-2.5">Vip</p>
-              <p className="font-bold py-2.5">Enrolled</p>
-              <p className="font-bold py-2.5">Contact</p>
-              <p className="font-bold py-2.5">isActive</p>
-              <p className="font-bold py-2.5">Group</p>
-              <p className="font-bold py-2.5">Category</p>
+          <div className=" flex mx-auto justify-between">
+            <div className="ml-5 w-1/3">
+              <p className="text_light_green bg-transparent  font-black text-lg py-2.5 ">
+                Name:
+              </p>
+              <p className="text_light_green bg-transparent  font-black text-lg py-2.5">
+                ID:
+              </p>
+              <p className="text_light_green bg-transparent font-black text-lg py-2.5">
+                Gender:
+              </p>
+
+              <p className="text_light_green bg-transparent font-black text-lg py-2.5">
+                Contact:
+              </p>
             </div>
             <div className=" w-3/4">
-              <p className="font-bold py-2.5">
+              <p className="font-black text-lg opacity-75 py-2.5">
                 {data.member.title}. {data.member.names}
               </p>
-              <p className="font-bold py-2.5">{data.member.id}</p>
-              <p className="font-bold py-2.5">{data.member.gender}</p>
-              {data.member.isPrincipal ? (
-                <p className="font-bold py-2.5">Yes</p>
-              ) : (
-                <p className="font-bold py-2.5">No</p>
-              )}
-              {data.member.isVip ? (
-                <p className="font-bold py-2.5">Yes</p>
-              ) : (
-                <p className="font-bold py-2.5">No</p>
-              )}
-              {data.member.isEnrolled ? (
-                <p className="font-bold py-2.5">Yes</p>
-              ) : (
-                <p className="font-bold py-2.5">No</p>
-              )}
-              <p className="font-bold py-2.5">
+              <p className="font-black text-lg opacity-75 py-2.5">
+                {data.member.id}
+              </p>
+              <p className="font-black text-lg opacity-75 py-2.5">
+                {data.member.gender}
+              </p>
+
+              <p className="font-black text-lg opacity-75 py-2.5">
                 {data.member.contacts[0].contactValue}
               </p>
-              {data.member.isActive ? (
-                <p className="font-bold py-2.5">Yes</p>
-              ) : (
-                <p className="font-bold py-2.5">No</p>
-              )}
-              <p className="font-bold py-2.5">{data.member.group}</p>
-              <p className="font-bold py-2.5">{data.member.category}</p>
             </div>
           </div>
         </div>
@@ -66,27 +60,34 @@ const DetailsCard = ({ data }) => {
           <h2 className="font-bold opacity-75 text-2xl text-center py-5">
             Cover Information
           </h2>
-          <div
-            style={{ width: "95%" }}
-            className="flex mx-auto justify-between"
-          >
-            <div className="w-1/3">
-              <p className="font-bold py-2.5">Policy No.</p>
-              <p className="font-bold py-2.5">Sch. Name</p>
-              <p className="font-bold py-2.5">Sch. code</p>
-              <p className="font-bold py-2.5">Status</p>
-              <p className="font-bold py-2.5">Valid From</p>
-              <p className="font-bold py-2.5">Valid To</p>
+          <div className="flex mx-auto justify-between">
+            <div className="xl:w-1/3 ml-5 w-2/5">
+              <p className="text_light_green bg-transparent font-black text-lg py-2.5">
+                Policy No.
+              </p>
+
+              <p className="text_light_green bg-transparent font-black text-lg py-2.5">
+                Status.
+              </p>
+              <p className="text_light_green bg-transparent font-black text-lg py-2.5">
+                Valid From.
+              </p>
+              <p className="text_light_green bg-transparent font-black text-lg py-2.5">
+                Valid To.
+              </p>
             </div>
-            <div className=" w-3/4">
-              <p className="font-bold py-2.5">{data.cover.policyNumber}</p>
-              <p className="font-bold py-2.5">{data.cover.schemeName}</p>
-              <p className="font-bold py-2.5">{data.cover.schemeCode}</p>
-              <p className="font-bold py-2.5">{data.cover.status}</p>
-              <p className="font-bold py-2.5">
+            <div className="xl:w-3/4 w-3/5">
+              <p className="font-black text-lg opacity-75 py-2.5">
+                {data.cover.policyNumber}
+              </p>
+
+              <p className="font-black text-lg opacity-75 py-2.5">
+                {data.cover.status}
+              </p>
+              <p className="font-black text-lg opacity-75 py-2.5">
                 {new Date(data.cover.validFrom).toLocaleDateString()}
               </p>
-              <p className="font-bold py-2.5">
+              <p className="font-black text-lg opacity-75 py-2.5">
                 {new Date(data.cover.validTo).toLocaleDateString()}
               </p>
             </div>
@@ -98,44 +99,37 @@ const DetailsCard = ({ data }) => {
             Benefits Information
           </h2>
           <div
-            style={{ width: "95%" }}
+            
             className="flex mx-auto justify-between"
           >
-            <div className="w-1/3">
-              <p className="font-bold py-2.5">Name</p>
-              <p className="font-bold py-2.5">Type</p>
-              <p className="font-bold py-2.5">Balance</p>
-              <p className="font-bold py-2.5">Limit</p>
-              <p className="font-bold py-2.5">Copay Type</p>
-              <p className="font-bold py-2.5">Copay Value</p>
-              <p className="font-bold py-2.5">Applies To</p>
-              <p className="font-bold py-2.5">Status</p>
-              <p className="font-bold py-2.5">Visit Limit</p>
-              <p className="font-bold py-2.5">Reserved</p>
+            <div className="ml-5 w-1/3">
+              <p className="text_light_green bg-transparent font-black text-lg  py-2.5">
+                Name
+              </p>
+              <p className="text_light_green bg-transparent font-black text-lg  py-2.5">
+                Type
+              </p>
+
+              <p className="text_light_green bg-transparent font-black text-lg  py-2.5">
+                Applies
+              </p>
+              <p className="text_light_green bg-transparent font-black text-lg  py-2.5">
+                Status
+              </p>
             </div>
             <div className=" w-3/4">
-              <p className="font-bold py-2.5">{data.benefits[0].benefitName}</p>
-              <p className="font-bold py-2.5">{data.benefits[0].benefitType}</p>
-              <p className="font-bold py-2.5">
-                Ksh.{data.benefits[0].availableBalance}
+              <p className="font-black text-lg opacity-75 py-2.5">
+                {data.benefits[0].benefitName}
               </p>
-              <p className="font-bold py-2.5">
-                Ksh.{data.benefits[0].benefitLimit}
+              <p className="font-black text-lg opacity-75 py-2.5">
+                {data.benefits[0].benefitType}
               </p>
-              <p className="font-bold py-2.5">{data.benefits[0].copayType}</p>
 
-              <p className="font-bold py-2.5">
-                Ksh.{data.benefits[0].copayValue}
-              </p>
-              <p className="font-bold py-2.5">
+              <p className="font-black text-lg opacity-75 py-2.5">
                 {data.benefits[0].copayAppliesTo[0]}
               </p>
-              <p className="font-bold py-2.5">{data.benefits[0].status}</p>
-              <p className="font-bold py-2.5">
-                Ksh.{data.benefits[0].visitLimit}
-              </p>
-              <p className="font-bold py-2.5">
-                Ksh.{data.benefits[0].reservedAmount}
+              <p className="font-black text-lg opacity-75 py-2.5">
+                {data.benefits[0].status}
               </p>
             </div>
           </div>

@@ -8,6 +8,22 @@
 html {
   font-family: "Inter", sans-serif;
 }
+
+@layer utilities {
+  @screen sm {
+    .smaller-head-text {
+      @apply text-[3rem] leading-[4rem] font-black;
+    }
+  }
+}
+@layer utilities {
+  @screen xl {
+    .smaller-head-text {
+      @apply text-[5rem] leading-[4rem] font-black;
+    }
+  }
+}
+
 .head-text {
   @apply xl:text-[7rem] text-[3rem] xl:leading-[8rem] leading-[4rem] font-black text-white;
 }
@@ -15,8 +31,9 @@ html {
   @apply xl:text-[4rem] text-[4rem] xl:leading-[1rem] leading-[3rem] font-medium text-white;
 }
 .smaller-head-text {
-  @apply xl:text-[2rem] text-[2rem] xl:leading-[1rem] leading-[2rem] font-medium ;
+  @apply text-[2rem] leading-[2rem] font-medium;
 }
+
 .glassmorphism {
   background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 2px 30px 0 rgba(31, 38, 135, 0.07);

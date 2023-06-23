@@ -1,0 +1,18 @@
+.team_home {
+  background-color: rgb(236, 255, 251);
+  height: 400px;
+  width: 100%;
+  border-bottom-left-radius: 60% 20%;
+  border-bottom-right-radius: 50% 20%;
+}
+.team_div {
+    background-color: white;
+    margin: 1rem;
+    
+    border-radius: 20px;
+    box-shadow: 2px 2px 20px rgba(17, 128, 179, 0.26);
+}
+.swiper-slide {
+    width: 15%;
+
+}

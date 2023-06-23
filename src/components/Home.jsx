@@ -3,6 +3,7 @@ import "./Home.css";
 import Datta from "./data.json";
 import DetailsCard from "./DetailsCard";
 import OTPPage from "./OTPPage";
+import Team from "./Team";
 
 import HomeImage from "../assets/home.png";
 import DocImage from "../assets/doctors.svg";
@@ -53,24 +54,29 @@ const Home = () => {
   };
 
   return (
-    <div className="w-screen">
+    <div className=" w-screen">
       {/* <div className="mx-auto w-3/4 mt-20">
         <p className="small-head-text text-center">G3 Patient Authentication</p>
       </div> */}
 
       {/* start of header */}
-      <diV>
-        <div className="header_div w-11/12">
-          <img src={HomeImage} alt="G3" className="w-full" />
-          <div className="header_glassmorphism  header_child">
-            <div className="mx-auto w-3/4 mt-5">
+      <div>
+        <div className=" sm:w-3/4 header_div w-11/12">
+          
+          <div className="xl:flex xl:justify-center header_glassmorphism  header_child">
+          <div className="xl:w-2/5 xl:h-full xl:flex-shrink-1">
+            <img  src={HomeImage} alt="G3" className="h-full bg-cover w-full" />
+          </div>
+          <div className=" xl:w-2/4 xl:mx-0 mx-auto w-3/4 mt-5 block">
+            <div >
               <p className="bg-inherit text_light_green smaller-head-text text-center">
                 G3 Patient Authentication
               </p>
             </div>
-            <div className="flex justify-center">
-              <div className="text-center">
-                <p className="py-4 px-3">
+           
+            <div className="xl:mt-10 flex justify-center">
+              <div className="xl:w-3/4 text-center">
+                <p className="xl:text-base sm:text-xl text-lg py-4 px-3">
                   G3 Patient Authentication is an online platform that enables
                   hospitals to verify the insurance status of their patients.
                   Using their member number, payer slider number, and phone
@@ -80,19 +86,21 @@ const Home = () => {
               </div>
             </div>
             {/* button */}
-            <div className="flex justify-center">
+            <div className="xl:mt-16 flex justify-center">
               <button className="w-3/4  text_light_green hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">
                 Get Started
               </button>
             </div>
             {/* end of button */}
           </div>
+          
         </div>
-      </diV>
+      </div>
+      </div>
       {/* end of header */}
       <div className="mt-10 curved_div info_curve_div">
         <div className="curve_extra"></div>
-        <div className="info_div h-1/4 w-3/4  mb-5">
+        <div className="xl:w-2/3 sm:w-3/5 info_div h-1/4 w-3/4  mb-5">
           <div className="h-2/4 w-3/4 mx-auto ">
             <img
               src={InsImage}
@@ -108,8 +116,8 @@ const Home = () => {
               Keep track of your insurance cover on real time from any device.
             </p>
           </div>
-        </div>
-        <div className="info_div h-1/4 w-3/4  mb-5">
+        </div>``
+        <div className="xl:w-2/3 sm:w-3/5 info_div h-1/4 w-3/4  mb-5">
           <div className="h-2/4 w-3/4 mx-auto ">
             <img
               src={DocImage}
@@ -127,7 +135,7 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <div className="info_div h-1/4 w-3/4  mb-5">
+        <div className="xl:w-2/3 sm:w-3/5 info_div h-1/4 w-3/4  mb-5">
           <div className="h-2/4  w-3/4 mx-auto">
             <img
               src={VsImage}
@@ -141,7 +149,8 @@ const Home = () => {
             </p>
             <p className="opacity-50 bg-inherit text-gray-500 font-bold pt-1 px-10 ">
               {" "}
-              Easly verify insurance claims and identify and avoid fraud with ease.
+              Easly verify insurance claims and identify and avoid fraud with
+              ease.
             </p>
           </div>
         </div>
@@ -184,22 +193,30 @@ const Home = () => {
               </label>
               <br />
               <div className="flex justify-center">
-              <button
-                className="text_light_green w-11/12 mt-5 mx-auto border rounded-full bg-green-500 h-10"
-                type="submit"
-              >
-                <p className="text-white font-bold">Submit</p>
-              </button>
+                <button
+                  className="text_light_green w-11/12 mt-5 mx-auto border rounded-full bg-green-500 h-10"
+                  type="submit"
+                >
+                  <p className="text-white font-bold">Submit</p>
+                </button>
               </div>
             </form>
           </div>
         </div>
       </div>
-      {/* <div className="extra"></div>
-      {Data ? <DetailsCard data={Data} /> : <></>}
       <div className="extra"></div>
-      <OTPPage otp={otp} />
-      <div className="extra"></div> */}
+      <Team />
+      <div className="extra"></div>
+      {Data ? <DetailsCard data={Data} setDatta={setDatta} /> : <></>}
+      <div className="extra"></div>
+      {/* <OTPPage otp={otp} /> */}
+      <div className="extra"></div>
+      <i className="pb-10 flex items-center justify-center">
+        <span className="circle">&copy;</span>
+        <span className="text-xs text-gray-500">
+          G3 all rights reserved 2023
+        </span>
+      </i>
     </div>
   );
 };
