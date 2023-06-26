@@ -13,8 +13,8 @@ const OTPPage = ({ otp }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (otpData.otpNumber === otp) {
+    const staticOtp = 5; // Static value for OTP
+    if (otpData.otpNumber === staticOtp.toString()) {
       setVerificationResult("success");
     } else {
       setVerificationResult("failure");
@@ -24,17 +24,17 @@ const OTPPage = ({ otp }) => {
   return (
     <div className="justify-center">
       <div className="justify-center">
-        <div className="align-center mx-auto w-2/4 py-16 small-head-text">
+        <div className="flex justify-center items-center mx-auto w-4/5 py-16 small-head-text">
           Patient Verification
         </div>
-        <div className="otp_container">
+        <div className="otp_container mx-auto">
           <form
             className="w-3/4 mx-auto justify-between"
             onSubmit={handleSubmit}
           >
             <br />
-            <label className="flex">
-              <p className="lucid-font text-bold opacity-75 el_form_label px-2.5">
+            <label>
+              <p className="sm:text-4xl lucid-font text-bold opacity-75 el_form_label px-2.5">
                 OTP Number:
               </p>
               <input
@@ -43,32 +43,25 @@ const OTPPage = ({ otp }) => {
                 name="otpNumber"
                 value={otpData.otpNumber}
                 onChange={handleChange}
-                className="text-white text-bold el_form_input"
+                className="sm:text-3xl sm:mt-20 text-blue-700 text-bold el_form_input"
               />
             </label>
             <br />
             <button
-              style={{
-                backgroundColor: "green",
-                width: "40%",
-                height: "40px",
-                margin: "auto auto auto 20%",
-                borderRadius: "10px",
-              }}
-              className="el_btn"
+              className="sm:h-20 text_light_green w-11/12 mt-5 mx-auto border rounded-full bg-green-500 h-10"
               type="submit"
             >
-              <p className="text-gray-300 font-bold">Submit OTP</p>
+              <p className="sm:text-3xl text-gray-300 font-bold">Submit OTP</p>
             </button>
           </form>
         </div>
       </div>
       {/* Conditional rendering of the popup component */}
       {verificationResult === "success" && (
-        <div className="popup success">Verification successful!</div>
+        <div className="sm:text-4xl popup success">Verification successful!</div>
       )}
       {verificationResult === "failure" && (
-        <div className="popup failure">
+        <div className="sm:text-4xl popup failure">
           Verification failed. Please try again.
         </div>
       )}

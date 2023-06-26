@@ -8,11 +8,21 @@
 .team_div {
     background-color: white;
     margin: 1rem;
-    
+    width: 50% !important;
     border-radius: 20px;
     box-shadow: 2px 2px 20px rgba(17, 128, 179, 0.26);
 }
 .swiper-slide {
     width: 15%;
 
+}
+
+@media (min-width: 801px) {
+  .team_div {
+    background-color: white;
+    margin: 1rem;
+    width: 30% !important;
+    border-radius: 20px;
+    box-shadow: 2px 2px 20px rgba(17, 128, 179, 0.26);
+}
 }
