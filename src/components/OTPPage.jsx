@@ -1,11 +1,18 @@
 import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+
 import "./OTPPage.css";
 
-const OTPPage = ({ otp }) => {
+const OTPPage = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const otpValue = queryParams.get("otp");
+  console.log("value-" + otpValue);
   const [otpData, setOtpData] = useState({
     otpNumber: "",
   });
-  const [verificationResult, setVerificationResult] = useState(""); // State for verification result
+  const [verificationResult, setVerificationResult] = useState("");
 
   const handleChange = (e) => {
     setOtpData({ ...otpData, [e.target.name]: e.target.value });
@@ -13,9 +20,9 @@ const OTPPage = ({ otp }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const staticOtp = 5; // Static value for OTP
-    if (otpData.otpNumber === staticOtp.toString()) {
+    if (otpData.otpNumber === otpValue) {
       setVerificationResult("success");
+      navigate('/visit');
     } else {
       setVerificationResult("failure");
     }

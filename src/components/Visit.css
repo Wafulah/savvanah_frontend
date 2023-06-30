@@ -1,0 +1,47 @@
+.visit_body {
+    background-color: rgb(236, 255, 251);
+    height: 100vh;
+    border: none;
+    margin: 5% auto;
+    border-radius: 30% / 1% 5% 0 0;
+  }
+  .center_text {
+    text-align: center;
+    justify-items: center;
+  }
+
+  .visit_div {
+    background-color: white;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 2px 2px 20px rgba(17, 128, 179, 0.26);
+  }
+
+  .success_div {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top: solid 5px rgb(2, 2, 43);
+  }
+
+  .visit_value {
+    position: relative;
+    margin: auto;
+  }
+  
+  .visit_value::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(2, 2, 43, 0.048);
+    box-shadow: 0px 4px 10px rgba(17, 128, 179, 0.26);
+  }
+
+  .visit_input {
+    border: solid 0.5px rgba(17, 128, 179, 0.26);
+    background-color: transparent;
+    border-radius: 5%;
+    box-shadow: 0px 4px 10px rgba(17, 128, 179, 0.26);
+  }

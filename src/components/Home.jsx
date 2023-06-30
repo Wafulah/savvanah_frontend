@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
-import Datta from "./data.json";
+
+import { store } from "./store";
+// import Datta from "./data.json";
 import DetailsCard from "./DetailsCard";
-import OTPPage from "./OTPPage";
+
 import Team from "./Team";
 
 import HomeImage from "../assets/home.png";
@@ -15,7 +17,7 @@ const Home = () => {
     membershipNumber: "",
     insurerNumber: "",
   });
-  const [otp, setOtp] = useState(null);
+
   const [Data, setDatta] = useState(null);
   const [response, setResponse] = useState(null);
   //   const Data = null;
@@ -25,30 +27,32 @@ const Home = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic, such as sending the data to an API x
 
     try {
       const response = await fetch(
-        "https://provider-edi-api.multitenant.slade360.co.ke/v1/beneficiaries/member_eligibility/",
+        "http://127.0.0.1:8000/member-eligibility/",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify({
+            membershipNumber: formData.membershipNumber,
+            insurerNumber: formData.insurerNumber,
+          }),
         }
       );
 
       const data = await response.json();
-      setResponse(data);
-      setDatta(Datta);
+      setDatta(data);
+      store.member_data = data;
     } catch (error) {
       console.error(error);
     }
 
     // Reset the form after submission
     setFormData({
-      membershipName: "",
+      membershipNumber: "",
       insurerNumber: "",
     });
   };
@@ -212,7 +216,7 @@ const Home = () => {
       <div className="extra"></div>
       {Data ? <DetailsCard data={Data} setDatta={setDatta} /> : <></>}
       <div className="extra"></div>
-      {/* <OTPPage otp={otp} /> */}
+
       <div className="extra"></div>
       <i className="pb-10 flex items-center justify-center">
         <span className="circle">&copy;</span>

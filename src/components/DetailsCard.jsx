@@ -1,17 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./DetailsCard.css";
 import { useNavigate } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
+import { store } from "./store";
 
 const DetailsCard = ({ data, setDatta }) => {
   const navigate = useNavigate();
+  const [otp, setOtp] = useState(null);
   const handleClearData = () => {
     setDatta(null);
   };
 
-  const handleClick = () => {
-    navigate("/otppage"); // Redirect to "/otppage" when the button is clicked
+  // const handleClick = () => {
+  //   navigate("/otppage"); // Redirect to "/otppage" when the button is clicked
+  // };
+  const handleClick = async () => {
+    const response = await fetch("http://127.0.0.1:8000/request-otp/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        otp_id: data.member.contacts[0].id,
+      }),
+    });
+  
+    const otpData = await response.json();
+    setOtp(otpData);
+    console.log(otpData);
+    store.otp = otpData;
+    // Navigate to "/otppage" with the OTP value as a parameter
+    navigate(`/otppage?otp=${otpData}`);
   };
+  
   return (
     <div className="home_detail ">
       <button className="close-button" onClick={handleClearData}>
@@ -122,17 +143,17 @@ const DetailsCard = ({ data, setDatta }) => {
             </div>
             <div className=" w-3/4">
               <p className="font-black text-lg opacity-75 py-2.5">
-                {data.benefits[0].benefitName}
+                {data.benefits[1].benefitName}
               </p>
               <p className="font-black text-lg opacity-75 py-2.5">
-                {data.benefits[0].benefitType}
+                {data.benefits[1].benefitType}
               </p>
 
               <p className="font-black text-lg opacity-75 py-2.5">
-                {data.benefits[0].copayAppliesTo[0]}
+                {data.benefits[1].copayAppliesTo[0]}
               </p>
               <p className="font-black text-lg opacity-75 py-2.5">
-                {data.benefits[0].status}
+                {data.benefits[1].status}
               </p>
             </div>
           </div>
